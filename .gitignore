@@ -4,3 +4,5 @@ build/
 .parcel-cache/
 .idea
 .cache
+/src/components/Button/
+/src/pages/page1/

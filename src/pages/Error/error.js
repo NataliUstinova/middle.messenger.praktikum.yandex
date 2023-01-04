@@ -1,4 +1,4 @@
-import './style.scss';
+import errorPageTpl from "./error.hbs";
 
 const errors = [
   {
@@ -12,6 +12,9 @@ const errors = [
     message: 'Internal server error',
   }
 ]
-export default errors;
 
+const errorPage = (id) => {
+  return errorPageTpl(errors[id])
+}
 
+export { errorPage };

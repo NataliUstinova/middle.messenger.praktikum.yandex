@@ -1,35 +1,41 @@
 import tpl from './index.hbs';
 import './index.scss';
-import errors from './pages/ErrorPage/error.js';
-import errorPageTpl from './pages/ErrorPage/error.hbs';
+import { pages } from './constants.js';
+import { errorPage } from "./pages/Error/error.js";
 
-const pages = [
-  { 
-    "title": "404",
-  },
-  {
-    "title": "500",
-  },
-  {
-    "title": "login",
-  },
-]
+const root = document.getElementById('root');
 
-const htmlTpl = document.createElement('template');
+function mainPage() {
+  const htmlTpl = document.createElement('template');
   htmlTpl.innerHTML = tpl({pages});
-  document.getElementById('root').appendChild(htmlTpl.content);
+  root.replaceChildren(htmlTpl.content);
+  addListeners();
+}
+
+mainPage();
+
+function backToChat() {
+  document.getElementById('back-to-chat').addEventListener('click', () => {
+    mainPage();
+  })
+}
+
+function addListeners() {
+  document.getElementById('404').addEventListener('click', () => {
+    const htmlTpl = document.createElement('template');
+    htmlTpl.innerHTML = errorPage(0)
+    root.replaceChildren(htmlTpl.content);
+    backToChat()
+  })
+
+  document.getElementById('500').addEventListener('click', () => {
+    const htmlTpl = document.createElement('template');
+    htmlTpl.innerHTML = errorPage(1);
+    root.replaceChildren(htmlTpl.content);
+    backToChat()
+  })
+}
 
 
-document.getElementById('404').addEventListener('click', (e) => {
-  e.preventDefault();
-  const htmlTpl = document.createElement('template');
-  htmlTpl.innerHTML = errorPageTpl(errors[0]);
-  document.getElementById('root').replaceChild(htmlTpl.content, document.getElementById('root').firstChild);
-})
 
-document.getElementById('500').addEventListener('click', (e) => {
-  e.preventDefault();
-  const htmlTpl = document.createElement('template');
-  htmlTpl.innerHTML = errorPageTpl(errors[1]);
-  document.getElementById('root').replaceChild(htmlTpl.content, document.getElementById('root').firstChild);
-})
+

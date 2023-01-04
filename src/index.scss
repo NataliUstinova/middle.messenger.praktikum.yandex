@@ -1,0 +1,42 @@
+@import "./styles/variables";
+
+body {
+  font-family: Inter, sans-serif;
+  color: $textcolor;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  margin: 150px 0 40px;
+  padding: 0;
+}
+
+.pages {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__link {
+    text-decoration: none;
+    color: $textcolor;
+    text-align: center;
+    &:hover {
+      color: $accentcolor;
+      text-underline-offset: 3px;
+      text-decoration: underline;
+    }
+  }
+}
+
+@import url('pages/Error/error.scss');
