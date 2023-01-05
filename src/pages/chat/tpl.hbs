@@ -1,0 +1,20 @@
+<div class="chat-page">
+  <div class="chats">
+    {{#each chats}}
+      <div class="separator"></div>
+        <div class="chat">
+          <div class="chat__avatar"></div>
+          <div>
+            <p class="chat__title">{{title}}</p>
+            <p class="chat__message">{{text}}</p>
+          </div>
+          <div class="chat__info-container">
+            <p class="chat__time">{{time}}</p>
+            <p class="chat__count">{{count}}</p>
+          </div>
+        </div>
+      <div class="separator"></div>
+    {{/each}}
+  </div>
+  <p class="chat-page__text">Выберите чат чтобы отправить сообщение</p>
+</div>

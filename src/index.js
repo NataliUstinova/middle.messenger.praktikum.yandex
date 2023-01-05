@@ -1,9 +1,10 @@
 import tpl from './index.hbs';
 import './index.scss';
-import { pages } from './utils/constants.js';
+import { pages, chats } from './utils/constants.js';
 import { errorPage } from "./pages/error/error.js";
 import loginHTML from "./pages/login/login";
 import registerHTML from "./pages/register/register";
+import chatHTML from "./pages/chat/chat"; 
 
 const root = document.getElementById('root');
 
@@ -21,6 +22,7 @@ function loginPage() {
   document.getElementById('toRegister').addEventListener('click', () => {
     registerPage();
   })
+  backToMain()
 }
 
 function registerPage() {
@@ -30,6 +32,14 @@ function registerPage() {
   document.getElementById('toLogin').addEventListener('click', () => {
     loginPage();
   })
+  backToMain()
+}
+
+function chatPage() {
+  const htmlTpl = document.createElement('template');
+  htmlTpl.innerHTML = chatHTML({chats});
+  root.replaceChildren(htmlTpl.content);
+  backToMain()
 }
 
 mainPage();
@@ -57,10 +67,15 @@ function addListeners() {
 
   document.getElementById('login').addEventListener('click', () => {
     loginPage();
+    
   })
 
   document.getElementById('register').addEventListener('click', () => {
     registerPage();
+  })
+  
+  document.getElementById('chat').addEventListener('click', () => {
+    chatPage();
   })
 }
 
