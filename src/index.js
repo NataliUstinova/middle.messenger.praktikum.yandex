@@ -1,8 +1,9 @@
 import tpl from './index.hbs';
 import './index.scss';
-import { pages } from './constants.js';
-import { errorPage } from "./pages/Error/error.js";
-import loginHTML from "./pages/Login/login";
+import { pages } from './utils/constants.js';
+import { errorPage } from "./pages/error/error.js";
+import loginHTML from "./pages/login/login";
+import registerHTML from "./pages/register/register";
 
 const root = document.getElementById('root');
 
@@ -11,6 +12,24 @@ function mainPage() {
   htmlTpl.innerHTML = tpl({pages});
   root.replaceChildren(htmlTpl.content);
   addListeners();
+}
+
+function loginPage() {
+  const htmlTpl = document.createElement('template');
+  htmlTpl.innerHTML = loginHTML;
+  root.replaceChildren(htmlTpl.content);
+  document.getElementById('toRegister').addEventListener('click', () => {
+    registerPage();
+  })
+}
+
+function registerPage() {
+  const htmlTpl = document.createElement('template');
+  htmlTpl.innerHTML = registerHTML;
+  root.replaceChildren(htmlTpl.content);
+  document.getElementById('toLogin').addEventListener('click', () => {
+    loginPage();
+  })
 }
 
 mainPage();
@@ -37,11 +56,11 @@ function addListeners() {
   })
 
   document.getElementById('login').addEventListener('click', () => {
-    const htmlTpl = document.createElement('template');
-    htmlTpl.innerHTML = loginHTML;
-    console.log(loginHTML)
-    root.replaceChildren(htmlTpl.content);
-    backToMain()
+    loginPage();
+  })
+
+  document.getElementById('register').addEventListener('click', () => {
+    registerPage();
   })
 }
 
