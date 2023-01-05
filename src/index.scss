@@ -3,6 +3,11 @@
 body {
   font-family: Inter, sans-serif;
   color: $textcolor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 ul {
@@ -17,7 +22,7 @@ ul {
   font-size: 20px;
   line-height: 20px;
   text-align: center;
-  margin: 150px 0 40px;
+  margin: 0 0 40px;
   padding: 0;
 }
 

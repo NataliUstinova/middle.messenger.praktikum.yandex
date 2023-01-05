@@ -1,7 +1,10 @@
 import tpl from './tpl.hbs';
 import './style.scss';
+import button from '../../components/button';
 
 
-export default ({title, id, label, type, placeholder}) => {
-  return tpl({ title, id, label, type, placeholder});
+const Auth =  ({title, inputs, buttonId, buttonValue, text}) => {
+  return tpl({title, inputs, buttonId, buttonValue, text});
 }
+
+export default Auth;

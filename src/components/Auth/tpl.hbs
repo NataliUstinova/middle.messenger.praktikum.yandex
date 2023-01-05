@@ -1,11 +1,18 @@
 <div class="auth">
   <h2 class="auth__title">{{title}}</h2>
   <form class="auth-form">
-    {{#each input}}
-      <div class="auth-form__field">
-        <label class="auth-form__label" for={{id}}>{{label}}</label>
-        <input class="auth-form__input" id={{id}} type={{type}} name={{id}} placeholder={{placeholder}}>
-      </div>
-    {{/each}}
+    <div>
+      {{#each inputs}}
+        
+        <div class="auth-form__field">
+          <label class="auth-form__label" for="{{id}}">{{label}}</label>
+          <input class="auth-form__input" id="{{id}}" type="{{type}}" name="{{id}}" placeholder="{{placeholder}}" autocomplete="{{autocomplete}}">
+        </div>
+      {{/each}}
+    </div>
+    <div class="auth-form__buttons">
+    {{> button buttonId=buttonId buttonValue=buttonValue }}
+    <a class="auth-form__text" id="signUp">{{text}}</a>
+    </div>
   </form>
 </div>
