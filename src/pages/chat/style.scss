@@ -6,6 +6,32 @@
   align-items: center;
   justify-content: flex-start;
   width: 99vw;
+  &__link {
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 21px 0 23px;
+    &:hover, &:active {
+      opacity: 0.8;
+    }
+    &:visited {
+      color: $textgrey;
+    }
+  }
+  &__link-text {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: right;
+    text-decoration: none;
+    color: $textgrey;
+  }
   &__text {
     width: calc(100vw - 300px);
     text-align: center;
@@ -29,7 +55,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow-y: scroll;
+  overflow: scroll;
   width: 310px;
   background: $bggrey;
   border-right: 1px solid $linegrey;
