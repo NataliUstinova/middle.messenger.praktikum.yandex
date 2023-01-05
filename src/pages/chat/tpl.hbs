@@ -1,13 +1,17 @@
 <div class="chat-page">
-  <div class="chats">
+  <div class="chats__container">
+  <div class="chat-search__container">
     <a id="toProfile" class="chat-page__link">
       <p class="chat-page__link-text">Профиль</p>
       <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 9L5 5L1 1" stroke="#999999"/></svg>
     </a>
-  
+    <input id="chat-search" class="chat-search__input" type="text" placeholder="Поиск"/>
+    <div class="separator"></div>
+  </div>
+  <div class="chats">
     {{#each chats}}
-      <div class="separator"></div>
+      
         <div class="chat">
           <div class="chat__avatar"></div>
           <div>
@@ -22,5 +26,6 @@
       <div class="separator"></div>
     {{/each}}
   </div>
-  <p class="chat-page__text">Выберите чат чтобы отправить сообщение</p>
+  </div>
+  <p class="chat-page__text">Выберите чат, чтобы отправить сообщение</p>
 </div>

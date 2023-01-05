@@ -5,9 +5,9 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-start;
-  width: 99vw;
+  height: 100%;
   &__link {
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
     display: flex;
     flex-direction: row;
     gap: 8px;
@@ -33,7 +33,8 @@
     color: $textgrey;
   }
   &__text {
-    width: calc(100vw - 300px);
+    margin: 0;
+    padding: 0 0 0 310px;
     text-align: center;
     font-style: normal;
     font-weight: 500;
@@ -43,19 +44,48 @@
   }
 }
 
+.chat-search__container {
+  padding: 0 10px;
+  background-color: $bggrey;
+  border-right: 1px solid $linegrey;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.chat-search__input {
+  width: 290px;
+  min-height: 32px;
+  background-color: $lightgrey;
+  border: none;
+  border-radius: 5px;
+  margin: 0 0 14px;
+  padding: 0 0 0 14px;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    color: $textgrey;
+  }
+}
+
 .separator {
   background-color: $linegrey;
   height: 1px;
-  width: calc(100% - 20px);
+  width: 100%;
+  
 }
 
 .chats {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: scroll;
+  position: fixed;
+  top: 102px;
+  left: 0;
+  overflow-y: visible;
   width: 310px;
   background: $bggrey;
   border-right: 1px solid $linegrey;
@@ -67,8 +97,12 @@
   align-items: center;
   justify-content: space-between;
   height: 71px;
-  width: calc(100% - 20px);
-  
+  width: 290px;
+  padding: 0 10px;
+  &:hover, &:active {
+    background-color: $accentcolorlight;
+    border-radius: 5px;
+  }
   &__avatar {
     margin: 0 10px 0 0;
     width: 47px;
@@ -77,12 +111,12 @@
     background-color: $lightgrey;
   }
   &__title {
-    width: 180px;
+    width: 203px;
     max-height: 15px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow-x: hidden;
     text-overflow: ellipsis;
     padding: 0;
     margin: 0 0 4px;
@@ -92,12 +126,12 @@
     color: $textcolor;
   }
   &__message {
-    width: 193px;
+    width: 203px;
     max-height: 30px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow-x: hidden;
     text-overflow: ellipsis;
     padding: 0;
     margin: 0;
