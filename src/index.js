@@ -1,49 +1,58 @@
 import tpl from './index.hbs';
 import './index.scss';
-import { pages, chats, user, profileInputs, passwordInputs } from './utils/constants.js';
 import { errorPage } from "./pages/error/error.js";
+import { pages, chats, user, profileInputs, passwordInputs, elements } from './utils/constants.js';
 import loginHTML from "./pages/login/login";
 import registerHTML from "./pages/register/register";
 import chatHTML from "./pages/chat/chat";
-import profileHTML from "./pages/profile/profile"; 
+import profileHTML from "./pages/profile/profile";
 
-const root = document.getElementById('root');
+
+const { htmlTpl, root } = elements;
+
+
+mainPage();
 
 function mainPage() {
-  const htmlTpl = document.createElement('template');
   htmlTpl.innerHTML = tpl({pages});
   root.replaceChildren(htmlTpl.content);
   addListeners();
 }
 
+function backToMain() {
+  const toMain = document.getElementById('toMain');
+  toMain.addEventListener('click', () => {
+    mainPage();
+  })
+}
+
 function loginPage() {
-  const htmlTpl = document.createElement('template');
   htmlTpl.innerHTML = loginHTML;
   root.replaceChildren(htmlTpl.content);
-  document.getElementById('toRegister').addEventListener('click', () => {
+  const toRegister = document.getElementById('toRegister');
+  toRegister.addEventListener('click', () => {
     registerPage();
   })
   backToMain()
 }
 
 function registerPage() {
-  const htmlTpl = document.createElement('template');
   htmlTpl.innerHTML = registerHTML;
   root.replaceChildren(htmlTpl.content);
-  document.getElementById('toLogin').addEventListener('click', () => {
+  const toLogin = document.getElementById('toLogin');
+  toLogin.addEventListener('click', () => {
     loginPage();
   })
   backToMain()
 }
 
 function chatPage() {
-  const htmlTpl = document.createElement('template');
   htmlTpl.innerHTML = chatHTML({chats});
   root.replaceChildren(htmlTpl.content);
-  document.getElementById('toProfile').addEventListener('click', () => {
+  const toProfile = document.getElementById('toProfile');
+  toProfile.addEventListener('click', () => {
     profilePage();
   });
-  backToMain()
 }
 
 function profilePage() {
@@ -63,18 +72,30 @@ function profilePage() {
 }
 
 function handleChangeProfile(e) {
+  const profileElements = {
+    saveProfileBtn: document.getElementById('save-profile'),
+    profileForm: '.profile__edit-form',
+  }
   e.preventDefault();
-  e.target.closest('.profile__edit-form').checkValidity() ? document.getElementById('save-profile').removeAttribute("disabled") : document.getElementById('save-profile').setAttribute("disabled", "true");
+  e.target.closest(profileElements.profileForm).checkValidity() ?
+    profileElements.saveProfileBtn.removeAttribute("disabled") 
+    : profileElements.saveProfileBtn.setAttribute("disabled", "true");
 }
 
 function editProfile() {
-  const profileBtns = document.querySelector('.profile__btn-container');
-  document.querySelectorAll('.profile__input').forEach((input) => {
+  const profileElements = {
+    profileInputs: document.querySelectorAll('.profile__input'),
+    saveProfileBtn: document.getElementById('save-profile'),
+    profileBtnsSeparators: document.querySelector('.profile__btn-container').querySelectorAll('.separator'),
+    profileTextBtns: document.querySelectorAll('.profile__text-button'),
+    profileTitle: document.querySelector('.profile__title'),
+  }
+  profileElements.profileInputs.forEach((input) => {
     input.removeAttribute("disabled");
     input.onchange = (e) => handleChangeProfile(e)
   });
   document.getElementById('save-profile').style.display = 'block';
-  profileBtns.querySelectorAll('.separator').forEach((item) => {
+  profileElements.profileBtnsSeparators.forEach((item) => {
     item.style.display = 'none';
   });
   document.querySelectorAll('.profile__text-button').forEach((button) => {
@@ -84,49 +105,47 @@ function editProfile() {
 }
 
 function editPassword() {
-  const htmlTpl = document.createElement('template');
   htmlTpl.innerHTML = profileHTML({user, inputs: passwordInputs});
   root.replaceChildren(htmlTpl.content);
   editProfile()
 }
 
-
-mainPage();
-
-function backToMain() {
-  document.getElementById('back-to-main').addEventListener('click', () => {
-    mainPage();
-  })
-}
-
 function addListeners() {
-  document.getElementById('404').addEventListener('click', () => {
-    const htmlTpl = document.createElement('template');
+  const links = {
+    toRegister: document.getElementById('toRegister'),
+    toLogin: document.getElementById('toLogin'),
+    toProfile: document.getElementById('toProfile'),
+    toMain: document.getElementById('toMain'),
+    toChat: document.getElementById('toChat'),
+    toError404: document.getElementById('error404'),
+    toError500: document.getElementById('error500'),
+  }
+
+  links.toError404.addEventListener('click', () => {
     htmlTpl.innerHTML = errorPage(0)
     root.replaceChildren(htmlTpl.content);
     backToMain()
   })
 
-  document.getElementById('500').addEventListener('click', () => {
-    const htmlTpl = document.createElement('template');
+  links.toError500.addEventListener('click', () => {
     htmlTpl.innerHTML = errorPage(1);
     root.replaceChildren(htmlTpl.content);
     backToMain()
   })
 
-  document.getElementById('login').addEventListener('click', () => {
+  links.toLogin.addEventListener('click', () => {
     loginPage();
     
   })
 
-  document.getElementById('register').addEventListener('click', () => {
+  links.toRegister.addEventListener('click', () => {
     registerPage();
   })
-  
-  document.getElementById('chat').addEventListener('click', () => {
+
+  links.toChat.addEventListener('click', () => {
     chatPage();
   })
-  document.getElementById('settings').addEventListener('click', () => {
+  links.toProfile.addEventListener('click', () => {
     profilePage();
   })
 }

@@ -1,38 +1,41 @@
+const elements = {
+  root: document.getElementById('root'),
+  htmlTpl: document.createElement('template'),
+}
+
 const pages = [
   {
-    "id": "404",
+    "id": "error404",
     "title": "Страница ошибки 404",
   },
   {
-    "id": "500",
+    "id": "error500",
     "title": "Страница ошибки 500",
   },
   {
-    "id": "login",
+    "id": "toLogin",
     "title": "Страница авторизации",
   },
   {
-    "id": "register",
+    "id": "toRegister",
     "title": "Страница регистрации",
   },
   {
-    "id": "settings",
+    "id": "toProfile",
     "title": "Страница настроек",
   },
   {
-    "id": "chat",
+    "id": "toChat",
     "title": "Страница чата",
   }
 ]
 
 const errors = [
   {
-    id: 404,
     title: '404',
     message: 'Страница не найдена',
   },
   {
-    id: 500,
     title: '500',
     message: 'Ошибка сервера',
   }
@@ -145,4 +148,4 @@ const passwordInputs = [
   { id: "newPasswordAgain", label: "Повторите новый пароль", type: "password", placeholder: "Введите новый пароль еще раз", autoComplete: "new-password"},
 ]
 
-export { pages, errors, chats, user, profileInputs, passwordInputs };
+export { pages, errors, chats, user, profileInputs, passwordInputs, elements };
