@@ -121,7 +121,7 @@ const chats = [
 const user = {
   first_name: 'Наталья',
   second_name: 'Устинова',
-  login: 'natalius',
+  login: 'na7au',
   display_name: 'Наташа',
   avatar: 'https://movies.nata.u.nomoredomains.club/static/media/about-me-pic.d6c3338c423d9e475c31.png',
   email: 'na7a.u@yandex.ru',
