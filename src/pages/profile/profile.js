@@ -3,8 +3,8 @@ import './style.scss';
 import profileForm from "../../components/ProfileForm";
 import separator from "../../components/Separator";
 
-const profileHTML = ({user, profileInputs}) => {
-  return tpl({user, profileInputs});
+const profileHTML = ({user, inputs}) => {
+  return tpl({user, inputs});
 }
 
 export default profileHTML;

@@ -139,4 +139,10 @@ const profileInputs = [
   { id: "password", label: "Пароль", type: "password", placeholder: "Введите пароль", initialValue: user.password},
 ]
 
-export { pages, errors, chats, user, profileInputs };
+const passwordInputs = [
+  { id: "oldPassword", label: "Старый пароль", type: "password", placeholder: "Введите старый пароль", autoComplete: "current-password", initialValue: user.password},
+  { id: "newPassword", label: "Новый пароль", type: "password", placeholder: "Введите новый пароль", autoComplete: "new-password"},
+  { id: "newPasswordAgain", label: "Повторите новый пароль", type: "password", placeholder: "Введите новый пароль еще раз", autoComplete: "new-password"},
+]
+
+export { pages, errors, chats, user, profileInputs, passwordInputs };

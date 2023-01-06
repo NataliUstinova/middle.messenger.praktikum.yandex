@@ -7,7 +7,7 @@ Handlebars.registerPartial('profileForm', tpl);
 
 
 
-export default ({profileInputs, buttonId, buttonValue,}) => {
-  return tpl({profileInputs, buttonId, buttonValue,});
+export default ({inputs, buttonId, buttonValue,}) => {
+  return tpl({inputs, buttonId, buttonValue,});
 }
 

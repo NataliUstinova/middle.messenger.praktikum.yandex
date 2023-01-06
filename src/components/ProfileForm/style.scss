@@ -18,6 +18,9 @@
     align-items: center;
     justify-content: space-between;
   }
+  &__input {
+    min-width: 200px;
+  }
   &__info-text {
     margin: 10px 0;
     padding: 0;

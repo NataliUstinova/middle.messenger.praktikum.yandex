@@ -1,6 +1,6 @@
 import tpl from './index.hbs';
 import './index.scss';
-import { pages, chats, user, profileInputs } from './utils/constants.js';
+import { pages, chats, user, profileInputs, passwordInputs } from './utils/constants.js';
 import { errorPage } from "./pages/error/error.js";
 import loginHTML from "./pages/login/login";
 import registerHTML from "./pages/register/register";
@@ -48,12 +48,16 @@ function chatPage() {
 
 function profilePage() {
   const htmlTpl = document.createElement('template');
-  htmlTpl.innerHTML = profileHTML({user, profileInputs});
+  htmlTpl.innerHTML = profileHTML({user, inputs: profileInputs});
   root.replaceChildren(htmlTpl.content);
   document.getElementById('save-profile').style.display = 'none';
   document.getElementById('editProfile').addEventListener('click', (e) => {
     e.preventDefault();
     editProfile();
+  })
+  document.getElementById('editPassword').addEventListener('click', (e) => {
+    e.preventDefault();
+    editPassword();
   })
   backToMain()
 }
@@ -77,6 +81,13 @@ function editProfile() {
     button.style.display = 'none';
   });
   document.querySelector('.profile__title').style.display = 'none';
+}
+
+function editPassword() {
+  const htmlTpl = document.createElement('template');
+  htmlTpl.innerHTML = profileHTML({user, inputs: passwordInputs});
+  root.replaceChildren(htmlTpl.content);
+  editProfile()
 }
 
 

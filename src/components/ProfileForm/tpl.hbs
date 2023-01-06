@@ -1,6 +1,6 @@
 <form class="profile__edit-form">
   <div class="profile__info-container">
-    {{#each profileInputs}}
+    {{#each inputs}}
       <div class="profile__info-row">
         <label for="{{id}}" class="profile__info-text profile__info-text_label">
           {{label}}
@@ -14,6 +14,7 @@
           class="profile__info-text profile__input"
           placeholder="{{placeholder}}"
           value="{{initialValue}}"
+          autocomplete="{{autoComplete}}"
         />
       </div>
       {{> separator}}
@@ -32,7 +33,8 @@
     {{> separator}}
     <button
       type="submit"
-      aria-label="Редактировать"
+      id="editPassword"
+      aria-label="Редактировать пароль"
       class="profile__text profile__text-button"
     >
       Изменить пароль
