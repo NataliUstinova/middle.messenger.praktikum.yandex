@@ -1,10 +1,11 @@
 import tpl from './index.hbs';
 import './index.scss';
-import { pages, chats } from './utils/constants.js';
+import { pages, chats, user, profileInputs } from './utils/constants.js';
 import { errorPage } from "./pages/error/error.js";
 import loginHTML from "./pages/login/login";
 import registerHTML from "./pages/register/register";
-import chatHTML from "./pages/chat/chat"; 
+import chatHTML from "./pages/chat/chat";
+import profileHTML from "./pages/profile/profile"; 
 
 const root = document.getElementById('root');
 
@@ -38,6 +39,13 @@ function registerPage() {
 function chatPage() {
   const htmlTpl = document.createElement('template');
   htmlTpl.innerHTML = chatHTML({chats});
+  root.replaceChildren(htmlTpl.content);
+  backToMain()
+}
+
+function profilePage() {
+  const htmlTpl = document.createElement('template');
+  htmlTpl.innerHTML = profileHTML({user, profileInputs});
   root.replaceChildren(htmlTpl.content);
   backToMain()
 }
@@ -76,6 +84,9 @@ function addListeners() {
   
   document.getElementById('chat').addEventListener('click', () => {
     chatPage();
+  })
+  document.getElementById('settings').addEventListener('click', () => {
+    profilePage();
   })
 }
 

@@ -118,4 +118,25 @@ const chats = [
   }
 ]
 
-export { pages, errors, chats };
+const user = {
+  first_name: 'Наталья',
+  second_name: 'Устинова',
+  login: 'natalius',
+  display_name: 'Наташа',
+  avatar: 'https://movies.nata.u.nomoredomains.club/static/media/about-me-pic.d6c3338c423d9e475c31.png',
+  email: 'na7a.u@yandex.ru',
+  password: '123456',
+  phone: '+7 999 999 99 99',
+}
+
+const profileInputs = [
+  { id: "email", label: "Почта", type: "email", placeholder: "Введите email", initialValue: user.email},
+  { id: "login", label: "Логин", type: "text", placeholder: "Введите логин", initialValue: user.login},
+  { id: "first_name", label: "Имя", type: "text", placeholder: "Введите имя", initialValue: user.first_name},
+  { id: "second_name", label: "Фамилия", type: "text", placeholder: "Введите фамилию", initialValue: user.second_name},
+  { id: "display_name", label: "Имя в чате", type: "text", placeholder: "Введите имя в чате", initialValue: user.display_name},
+  { id: "phone", label: "Телефон", type: "tel", placeholder: "Введите телефон", initialValue: user.phone},
+  { id: "password", label: "Пароль", type: "password", placeholder: "Введите пароль", initialValue: user.password},
+]
+
+export { pages, errors, chats, user, profileInputs };
