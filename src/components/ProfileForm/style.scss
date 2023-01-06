@@ -10,7 +10,7 @@
   &__info-container {
     margin: 0 auto;
     width: 510px;
-    padding-bottom: 150px;
+    padding-bottom: 60px;
   }
   &__info-row {
     display: flex;
@@ -44,7 +44,7 @@
       color: $invalidtext;
     }
   }
-  &__text-container {
+  &__btn-container {
     margin: 0;
     padding: 0;
     display: flex;
@@ -107,7 +107,7 @@
   .profile__title {
     margin: 236px 0 96px;
   }
-  .profile__text-container {
+  .profile__btn-container {
     bottom: 40px;
   }
 }

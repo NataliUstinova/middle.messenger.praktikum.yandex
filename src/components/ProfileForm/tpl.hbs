@@ -11,7 +11,7 @@
           disabled
           id="{{id}}"
           name="{{id}}"
-          class="profile__info-text"
+          class="profile__info-text profile__input"
           placeholder="{{placeholder}}"
           value="{{initialValue}}"
         />
@@ -19,10 +19,12 @@
       {{> separator}}
     {{/each}}
   </div>
-  <div class="profile__text-container">
+  <div class="profile__btn-container">
+    {{> button buttonId="save-profile" buttonValue="Сохранить" }}
     <button
+      id="editProfile"
       type="submit"
-      aria-label="Редактировать"
+      aria-label="Редактировать данные"
       class="profile__text profile__text-button"
     >
       Изменить данные
@@ -36,8 +38,8 @@
       Изменить пароль
     </button>
     {{> separator}}
-    <div
-      class="profile__text profile__text_exit"
+    <div id="back-to-main"
+      class="profile__text profile__text-button profile__text_exit"
     >
       Выйти
     </div>

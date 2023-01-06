@@ -40,6 +40,9 @@ function chatPage() {
   const htmlTpl = document.createElement('template');
   htmlTpl.innerHTML = chatHTML({chats});
   root.replaceChildren(htmlTpl.content);
+  document.getElementById('toProfile').addEventListener('click', () => {
+    profilePage();
+  });
   backToMain()
 }
 
@@ -47,8 +50,35 @@ function profilePage() {
   const htmlTpl = document.createElement('template');
   htmlTpl.innerHTML = profileHTML({user, profileInputs});
   root.replaceChildren(htmlTpl.content);
+  document.getElementById('save-profile').style.display = 'none';
+  document.getElementById('editProfile').addEventListener('click', (e) => {
+    e.preventDefault();
+    editProfile();
+  })
   backToMain()
 }
+
+function handleChangeProfile(e) {
+  e.preventDefault();
+  e.target.closest('.profile__edit-form').checkValidity() ? document.getElementById('save-profile').removeAttribute("disabled") : document.getElementById('save-profile').setAttribute("disabled", "true");
+}
+
+function editProfile() {
+  const profileBtns = document.querySelector('.profile__btn-container');
+  document.querySelectorAll('.profile__input').forEach((input) => {
+    input.removeAttribute("disabled");
+    input.onchange = (e) => handleChangeProfile(e)
+  });
+  document.getElementById('save-profile').style.display = 'block';
+  profileBtns.querySelectorAll('.separator').forEach((item) => {
+    item.style.display = 'none';
+  });
+  document.querySelectorAll('.profile__text-button').forEach((button) => {
+    button.style.display = 'none';
+  });
+  document.querySelector('.profile__title').style.display = 'none';
+}
+
 
 mainPage();
 
