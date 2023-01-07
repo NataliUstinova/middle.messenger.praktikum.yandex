@@ -1,0 +1,47 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.error__title {
+  margin: 0 0 20px;
+  padding: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #1E1E1E;
+}
+.error__message {
+  margin: 0 0 69px;
+  padding: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #1E1E1E;
+}
+.error__link {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 11px;
+  text-align: center;
+  color: #3369F3;
+  text-decoration: none;
+}
+.error__link:hover, .error__link:active {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  opacity: 0.8;
+}
+.error__link:visited {
+  color: #3369F3;
+}
+
+/*# sourceMappingURL=error.css.map */

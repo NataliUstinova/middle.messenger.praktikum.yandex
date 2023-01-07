@@ -1,0 +1,25 @@
+@import './../../styles/variables';
+
+.button {
+  margin: 0;
+  padding: 0;
+  width: 280px;
+  height: 37px;
+  background-color: $accentcolor;
+  border-radius: 8px;
+  color: $white;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  border: none;
+  &:hover, &:active {
+    opacity: 0.8;
+  }
+  &:disabled {
+    border: 1px solid $accentcolor;
+    color: $accentcolor;
+    background-color: $white;
+    pointer-events: none;
+  }
+}
