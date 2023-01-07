@@ -6,7 +6,7 @@
   width: calc(100vw - 350px);
   overflow: scroll;
   position: absolute;
-  bottom: 54px;
+  bottom: 84px;
   right: 20px;
 }
 .messages__time {
