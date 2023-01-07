@@ -21,7 +21,7 @@
 #### Дизайн проекта в [Figma](https://www.figma.com/file/km1CWADhd93R35jJy04nXJ/)
 
 #### Деплой проекта в [Netlify](https://prismatic-bunny-658020.netlify.app/)
-#### Ссылка на [Pull Request](https://github.com/NataliUstinova/middle.messenger.praktikum.yandex/pull/1)
+#### Ссылка на [Pull Request](https://github.com/NataliUstinova/middle.messenger.praktikum.yandex/pull/2)
 
 --------------
 
