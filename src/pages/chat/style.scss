@@ -65,7 +65,9 @@
     outline: none;
   }
   &::placeholder {
+    font-family: 'Inter', FontAwesome, sans-serif;
     font-style: normal;
+    text-decoration: inherit;
     font-weight: 500;
     font-size: 12px;
     line-height: 12px;
