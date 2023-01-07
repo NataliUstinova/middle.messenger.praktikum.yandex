@@ -10,7 +10,23 @@
   bottom: 0;
   right: 0;
   padding: 11px 20px;
+  margin: 0;
   border-top: 1px solid $linegrey;
+  &__file-input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    &-label {
+      cursor: pointer;
+      position: relative;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
   &__input {
     width: 66vw;
     border-radius: 30px;
@@ -18,6 +34,21 @@
     height: 32px;
     background-color: $lightgrey;
     padding: 0 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    &:hover {
+      opacity: 0.8;
+    }
     &:focus {
       outline: none;
     }
