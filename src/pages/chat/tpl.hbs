@@ -1,4 +1,5 @@
 <div class="chat-page">
+  {{> chatNameHeader}}
   <div class="chats__container">
     {{> search }}
   <div class="chats">
@@ -19,6 +20,7 @@
     {{/each}}
   </div>
   </div>
-  <p class="chat-page__text">Выберите чат, чтобы отправить сообщение</p>
+  {{> Messages }}
+<!--  <p class="chat-page__text">Выберите чат, чтобы отправить сообщение</p>-->
   {{> messageInput}}
 </div>

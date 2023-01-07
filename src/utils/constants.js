@@ -132,6 +132,25 @@ const user = {
   phone: '+7 999 999 99 99',
 }
 
+const chat = {
+    "id": 123,
+    "title": "my-chat",
+    "avatar": "/123/avatar1.jpg",
+    "unread_count": 15,
+    "last_message": {
+    "user": {
+      "first_name": "Petya",
+        "second_name": "Pupkin",
+        "avatar": "/path/to/avatar.jpg",
+        "email": "my@email.com",
+        "login": "userLogin",
+        "phone": "8(911)-222-33-22"
+    },
+    "time": "2020-01-02T14:22:22.000Z",
+      "content": "this is message content"
+  }
+} 
+
 const profileInputs = [
   { id: "email", label: "Почта", type: "email", placeholder: "Введите email", initialValue: user.email},
   { id: "login", label: "Логин", type: "text", placeholder: "Введите логин", initialValue: user.login},
@@ -148,4 +167,4 @@ const passwordInputs = [
   { id: "newPasswordAgain", label: "Повторите новый пароль", type: "password", placeholder: "Введите новый пароль еще раз", autoComplete: "new-password"},
 ]
 
-export { pages, errors, chats, user, profileInputs, passwordInputs, elements };
+export { pages, errors, chats, user, profileInputs, passwordInputs, elements, chat };
