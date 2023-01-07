@@ -87,7 +87,8 @@
   position: fixed;
   top: 102px;
   left: 0;
-  overflow-y: visible;
+  height: calc(100vh - 102px);
+  overflow-y: scroll;
   width: 310px;
   background: $bggrey;
   border-right: 1px solid $linegrey;
