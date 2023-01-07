@@ -20,9 +20,11 @@ function mainPage() {
 }
 
 function backToMain() {
-  const toMain = document.getElementById('toMain');
-  toMain.addEventListener('click', () => {
-    mainPage();
+  const toMain = document.querySelectorAll('.toMain');
+  toMain.forEach((link) => {
+    link.addEventListener('click', () => {
+      mainPage();
+    })
   })
 }
 
@@ -108,6 +110,7 @@ function editPassword() {
   htmlTpl.innerHTML = profileHTML({user, inputs: passwordInputs});
   root.replaceChildren(htmlTpl.content);
   editProfile()
+  backToMain()
 }
 
 function addListeners() {
