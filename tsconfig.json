@@ -9,8 +9,15 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "isolatedModules": true,
   },
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "resolve": {
+    "extensions": [
+      ".ts",
+      ".hbs"
+    ]
+  }
 }

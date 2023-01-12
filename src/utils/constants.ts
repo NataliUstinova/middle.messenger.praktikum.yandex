@@ -1,4 +1,6 @@
-import { IPage, IError, IChats, ImockUser, IChatRootObject, IInput } from './constants.d';
+import {
+  IPage, IError, IChats, ImockUser, IChatRootObject, IInput,
+} from './constants.d';
 
 const elements: {
   root: HTMLElement | null,
@@ -6,34 +8,34 @@ const elements: {
 } = {
   root: document.getElementById('root'),
   htmlTpl: document.createElement('template'),
-}
+};
 
 const pages: IPage[] = [
   {
-    "id": "error404",
-    "title": "Страница ошибки 404",
+    id: 'error404',
+    title: 'Страница ошибки 404',
   },
   {
-    "id": "error500",
-    "title": "Страница ошибки 500",
+    id: 'error500',
+    title: 'Страница ошибки 500',
   },
   {
-    "id": "toLogin",
-    "title": "Страница авторизации",
+    id: 'toLogin',
+    title: 'Страница авторизации',
   },
   {
-    "id": "toRegister",
-    "title": "Страница регистрации",
+    id: 'toRegister',
+    title: 'Страница регистрации',
   },
   {
-    "id": "toProfile",
-    "title": "Страница настроек",
+    id: 'toProfile',
+    title: 'Страница настроек',
   },
   {
-    "id": "toChat",
-    "title": "Страница чата",
-  }
-]
+    id: 'toChat',
+    title: 'Страница чата',
+  },
+];
 
 const errors: IError[] = [
   {
@@ -43,8 +45,8 @@ const errors: IError[] = [
   {
     title: '500',
     message: 'Ошибка сервера',
-  }
-]
+  },
+];
 
 const chats: IChats[] = [
   {
@@ -123,8 +125,8 @@ const chats: IChats[] = [
     title: 'Стас Рогозин',
     text: 'Можно или сегодня или завтра вечером. Во вторник не получится',
     time: 'Сб',
-  }
-]
+  },
+];
 
 const user: ImockUser = {
   first_name: 'Наталья',
@@ -135,41 +137,61 @@ const user: ImockUser = {
   email: 'na7a.u@yandex.ru',
   password: '123456',
   phone: '+7 999 999 99 99',
-}
+};
 
 const chat: IChatRootObject = {
-    "id": 123,
-    "title": "my-chat",
-    "avatar": "/123/avatar1.jpg",
-    "unread_count": 15,
-    "last_message": {
-    "user": {
-      "first_name": "Petya",
-        "second_name": "Pupkin",
-        "avatar": "/path/to/avatar.jpg",
-        "email": "my@email.com",
-        "login": "userLogin",
-        "phone": "8(911)-222-33-22"
+  id: 123,
+  title: 'my-chat',
+  avatar: '/123/avatar1.jpg',
+  unread_count: 15,
+  last_message: {
+    user: {
+      first_name: 'Petya',
+      second_name: 'Pupkin',
+      avatar: '/path/to/avatar.jpg',
+      email: 'my@email.com',
+      login: 'userLogin',
+      phone: '8(911)-222-33-22',
     },
-    "time": "2020-01-02T14:22:22.000Z",
-      "content": "this is message content"
-  }
-} 
+    time: '2020-01-02T14:22:22.000Z',
+    content: 'this is message content',
+  },
+};
 
 const profileInputs: IInput[] = [
-  { id: "email", label: "Почта", type: "email", placeholder: "Введите email", initialValue: user.email},
-  { id: "login", label: "Логин", type: "text", placeholder: "Введите логин", initialValue: user.login},
-  { id: "first_name", label: "Имя", type: "text", placeholder: "Введите имя", initialValue: user.first_name},
-  { id: "second_name", label: "Фамилия", type: "text", placeholder: "Введите фамилию", initialValue: user.second_name},
-  { id: "display_name", label: "Имя в чате", type: "text", placeholder: "Введите имя в чате", initialValue: user.display_name},
-  { id: "phone", label: "Телефон", type: "tel", placeholder: "Введите телефон", initialValue: user.phone},
-  { id: "password", label: "Пароль", type: "password", placeholder: "Введите пароль", initialValue: user.password},
-]
+  {
+    id: 'email', label: 'Почта', type: 'email', placeholder: 'Введите email', initialValue: user.email,
+  },
+  {
+    id: 'login', label: 'Логин', type: 'text', placeholder: 'Введите логин', initialValue: user.login,
+  },
+  {
+    id: 'first_name', label: 'Имя', type: 'text', placeholder: 'Введите имя', initialValue: user.first_name,
+  },
+  {
+    id: 'second_name', label: 'Фамилия', type: 'text', placeholder: 'Введите фамилию', initialValue: user.second_name,
+  },
+  {
+    id: 'display_name', label: 'Имя в чате', type: 'text', placeholder: 'Введите имя в чате', initialValue: user.display_name,
+  },
+  {
+    id: 'phone', label: 'Телефон', type: 'tel', placeholder: 'Введите телефон', initialValue: user.phone,
+  },
+  {
+    id: 'password', label: 'Пароль', type: 'password', placeholder: 'Введите пароль', initialValue: user.password,
+  },
+];
 
 const passwordInputs: IInput[] = [
-  { id: "oldPassword", label: "Старый пароль", type: "password", placeholder: "Введите старый пароль", autoComplete: "current-password", initialValue: user.password},
-  { id: "newPassword", label: "Новый пароль", type: "password", placeholder: "Введите новый пароль", autoComplete: "new-password"},
-  { id: "newPasswordAgain", label: "Повторите новый пароль", type: "password", placeholder: "Введите новый пароль еще раз", autoComplete: "new-password"},
-]
+  {
+    id: 'oldPassword', label: 'Старый пароль', type: 'password', placeholder: 'Введите старый пароль', autoComplete: 'current-password', initialValue: user.password,
+  },
+  {
+    id: 'newPassword', label: 'Новый пароль', type: 'password', placeholder: 'Введите новый пароль', autoComplete: 'new-password',
+  },
+  {
+    id: 'newPasswordAgain', label: 'Повторите новый пароль', type: 'password', placeholder: 'Введите новый пароль еще раз', autoComplete: 'new-password',
+  },
+];
 
 export { pages, errors, chats, user, profileInputs, passwordInputs, elements, chat };

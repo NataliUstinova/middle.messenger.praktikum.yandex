@@ -1,7 +1,8 @@
 {
   "extends": "@parcel/config-default",
   "transformers": {
-    "*.hbs": ["parcel-transformer-hbs"]
+    "*.hbs": ["parcel-transformer-hbs"],
+    "*.{ts,tsx}": ["@parcel/transformer-typescript-tsc"]
   },
-  "resolvers": ["@parcel/resolver-glob", "..."]
+  "resolvers": ["@parcel/resolver-glob", "parcel-resolver-tspaths", "..."]
 }
