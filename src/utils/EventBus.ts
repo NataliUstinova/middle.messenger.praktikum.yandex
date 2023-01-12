@@ -1,9 +1,9 @@
 class EventBus {
+  listeners: { [key: string]: ((...args: any[]) => void)[] } = {};
   constructor() {
-    this.listeners = {};
+    this.listeners = {}
   }
-
-  on(event, callback) {
+  on(event: string, callback: () => void) {
     if (!this.listeners[event]) {
       this.listeners[event] = [];
     }
@@ -11,7 +11,7 @@ class EventBus {
     this.listeners[event].push(callback);
   }
 
-  off(event, callback) {
+  off(event: string, callback: () => void) {
     if (!this.listeners[event]) {
       throw new Error(`Нет события: ${event}`);
     }
@@ -21,14 +21,12 @@ class EventBus {
     );
   }
 
-  emit(event, ...args) {
+  emit(event: string, ...arg: any[]) {
     if (!this.listeners[event]) {
       throw new Error(`Нет события: ${event}`);
     }
 
-    this.listeners[event].forEach(function(listener) {
-      listener(...args);
-    });
+    this.listeners[event].forEach(listener => listener(...arg));
   }
 }
 
