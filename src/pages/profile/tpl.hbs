@@ -1,0 +1,15 @@
+<div class="profile">
+  {{> backSection}}
+  <div class="profile__avatar">
+    <label for="avatar" class="profile__avatar-label">
+      <input class="profile__avatar-input" type="file" name="avatar" id="avatar"/>
+    </label>
+    <img
+      src="{{user.avatar}}"
+      alt="Аватар"
+      class="profile__avatar-image"
+    />
+  </div>
+  <h2 class="profile__title">{{user.first_name}} {{user.second_name}}</h2>
+  {{> profileForm profileInputs=profileInputs}}
+</div>

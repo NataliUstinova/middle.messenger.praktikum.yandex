@@ -1,0 +1,15 @@
+@import './../../styles/variables';
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: $linegrey;
+  &:last-child {
+    display: none;
+  }
+}
+.separator1 {
+  width: 100%;
+  height: 1px;
+  background-color: $linegrey;
+}

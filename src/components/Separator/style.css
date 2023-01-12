@@ -1,0 +1,16 @@
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #EAEAEA;
+}
+.separator:last-child {
+  display: none;
+}
+
+.separator1 {
+  width: 100%;
+  height: 1px;
+  background-color: #EAEAEA;
+}
+
+/*# sourceMappingURL=style.css.map */

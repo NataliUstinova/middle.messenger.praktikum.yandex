@@ -1,0 +1,25 @@
+.button {
+  margin: 0;
+  padding: 0;
+  width: 280px;
+  height: 37px;
+  background-color: #3369F3;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  border: none;
+}
+.button:hover, .button:active {
+  opacity: 0.8;
+}
+.button:disabled {
+  border: 1px solid #3369F3;
+  color: #3369F3;
+  background-color: #FFFFFF;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=style.css.map */

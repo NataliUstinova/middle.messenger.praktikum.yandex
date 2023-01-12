@@ -1,0 +1,133 @@
+@import './../../styles/variables';
+
+.profile {
+  &__edit-form {
+    margin-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__info-container {
+    margin: 0 auto;
+    width: 510px;
+    padding-bottom: 60px;
+  }
+  &__info-row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__input {
+    min-width: 200px;
+  }
+  &__info-text {
+    margin: 10px 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 13px;
+    border: none;
+    text-align: right;
+    color: $textcolor;
+    outline: none !important;
+    &:disabled {
+      color: $textgrey;
+      background-color: $white;
+      pointer-events: none;
+    }
+    &_label {
+      color: $textcolor;
+    }
+    &::placeholder {
+      color: $textgrey;
+    }
+    &:invalid {
+      color: $invalidtext;
+    }
+  }
+  &__btn-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+  &__text {
+    padding: 0;
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    color: $textcolor;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:disabled {
+      color: $textgrey;
+      pointer-events: none;
+    }
+  }
+  &__text-button {
+    width: 510px;
+    text-align: left;
+    color: $accentcolor;
+  }
+  &__text_exit {
+    color: $invalidtext;
+    width: 510px;
+    text-align: left;
+    &:visited {
+      color: $invalidtext;
+    }
+  }
+}
+
+
+.profile__error-text {
+  min-height: 30px;
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  line-height: 12px;
+  max-width: 260px;
+  color: $invalidtext;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    height: calc(100vh - 10px);
+  }
+  .profile__title {
+    margin: 236px 0 96px;
+  }
+  .profile__btn-container {
+    bottom: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  .profile {
+    height: calc(100vh - 74px);
+  }
+  .profile__title {
+    margin: 70px 0 80px;
+  }
+  .profile__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .profile__info-container {
+    width: 260px;
+    padding-bottom: 200px;
+  }
+}

@@ -1,0 +1,49 @@
+<form class="profile__edit-form">
+  <div class="profile__info-container">
+    {{#each inputs}}
+      <div class="profile__info-row">
+        <label for="{{id}}" class="profile__info-text profile__info-text_label">
+          {{label}}
+        </label>
+        <input
+          type="{{type}}"
+          required
+          disabled
+          id="{{id}}"
+          name="{{id}}"
+          class="profile__info-text profile__input"
+          placeholder="{{placeholder}}"
+          value="{{initialValue}}"
+          autocomplete="{{autoComplete}}"
+        />
+      </div>
+      {{> separator}}
+    {{/each}}
+  </div>
+  <div class="profile__btn-container">
+    {{> button buttonId="save-profile" buttonValue="Сохранить" }}
+    <button
+      id="editProfile"
+      type="submit"
+      aria-label="Редактировать данные"
+      class="profile__text profile__text-button"
+    >
+      Изменить данные
+    </button>
+    {{> separator}}
+    <button
+      type="submit"
+      id="editPassword"
+      aria-label="Редактировать пароль"
+      class="profile__text profile__text-button"
+    >
+      Изменить пароль
+    </button>
+    {{> separator}}
+    <div id="toMain"
+      class="profile__text profile__text-button profile__text_exit toMain"
+    >
+      Выйти
+    </div>
+  </div>
+</form>

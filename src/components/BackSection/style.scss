@@ -1,0 +1,23 @@
+@import './../../styles/variables';
+
+.back-section {
+  background-color: $bggrey;
+  position: absolute;
+  width: 64px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid $linegrey;
+  &__btn {
+    width: 28px;
+    height: 28px;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}

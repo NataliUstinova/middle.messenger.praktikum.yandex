@@ -1,0 +1,23 @@
+.back-section {
+  background-color: #F8F8F8;
+  position: absolute;
+  width: 64px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #EAEAEA;
+}
+.back-section__btn {
+  width: 28px;
+  height: 28px;
+}
+.back-section__btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=style.css.map */

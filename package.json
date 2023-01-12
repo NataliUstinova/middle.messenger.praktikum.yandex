@@ -1,0 +1,37 @@
+{
+  "name": "middle.messenger.praktikum.yandex",
+  "version": "1.0.0",
+  "description": "A JS project by Natalia Ustinova",
+  "scripts": {
+    "watch": "parcel watch ./src/index.html",
+    "start": "parcel src/index.html --open —no-cache --port=3000",
+    "clean": "rimraf ./dist",
+    "build": "parcel build src/index.html",
+    "server": "node ./server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NataliUstinova/middle.messenger.praktikum.yandex.git"
+  },
+  "author": "Natalia Ustinova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NataliUstinova/middle.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/NataliUstinova/middle.messenger.praktikum.yandex#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  },
+  "devDependencies": {
+    "@parcel/resolver-glob": "2.8.2",
+    "@parcel/transformer-inline-string": "2.8.2",
+    "@parcel/transformer-sass": "2.8.2",
+    "handlebars": "4.7.7",
+    "parcel": "2.8.2",
+    "parcel-transformer-hbs": "1.0.4",
+    "path": "0.12.7",
+    "rimraf": "3.0.2",
+    "sass": "1.57.1"
+  }
+}
