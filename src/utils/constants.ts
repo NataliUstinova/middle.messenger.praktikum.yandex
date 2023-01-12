@@ -1,9 +1,14 @@
-const elements = {
+import { IPage, IError, IChats, ImockUser, IChatRootObject, IInput } from './constants.d';
+
+const elements: {
+  root: HTMLElement | null,
+  htmlTpl: HTMLTemplateElement,
+} = {
   root: document.getElementById('root'),
   htmlTpl: document.createElement('template'),
 }
 
-const pages = [
+const pages: IPage[] = [
   {
     "id": "error404",
     "title": "Страница ошибки 404",
@@ -30,7 +35,7 @@ const pages = [
   }
 ]
 
-const errors = [
+const errors: IError[] = [
   {
     title: '404',
     message: 'Страница не найдена',
@@ -41,7 +46,7 @@ const errors = [
   }
 ]
 
-const chats = [
+const chats: IChats[] = [
   {
     title: 'Андрей',
     text: 'Изображение',
@@ -121,7 +126,7 @@ const chats = [
   }
 ]
 
-const user = {
+const user: ImockUser = {
   first_name: 'Наталья',
   second_name: 'Устинова',
   login: 'na7au',
@@ -132,7 +137,7 @@ const user = {
   phone: '+7 999 999 99 99',
 }
 
-const chat = {
+const chat: IChatRootObject = {
     "id": 123,
     "title": "my-chat",
     "avatar": "/123/avatar1.jpg",
@@ -151,7 +156,7 @@ const chat = {
   }
 } 
 
-const profileInputs = [
+const profileInputs: IInput[] = [
   { id: "email", label: "Почта", type: "email", placeholder: "Введите email", initialValue: user.email},
   { id: "login", label: "Логин", type: "text", placeholder: "Введите логин", initialValue: user.login},
   { id: "first_name", label: "Имя", type: "text", placeholder: "Введите имя", initialValue: user.first_name},
@@ -161,7 +166,7 @@ const profileInputs = [
   { id: "password", label: "Пароль", type: "password", placeholder: "Введите пароль", initialValue: user.password},
 ]
 
-const passwordInputs = [
+const passwordInputs: IInput[] = [
   { id: "oldPassword", label: "Старый пароль", type: "password", placeholder: "Введите старый пароль", autoComplete: "current-password", initialValue: user.password},
   { id: "newPassword", label: "Новый пароль", type: "password", placeholder: "Введите новый пароль", autoComplete: "new-password"},
   { id: "newPasswordAgain", label: "Повторите новый пароль", type: "password", placeholder: "Введите новый пароль еще раз", autoComplete: "new-password"},

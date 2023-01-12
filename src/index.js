@@ -1,7 +1,7 @@
 import tpl from './index.hbs';
 import './index.scss';
 import { errorPage } from "./pages/error/error.js";
-import { pages, chats, user, profileInputs, passwordInputs, elements } from './utils/constants.js';
+import { pages, chats, user, profileInputs, passwordInputs, elements } from './utils/constants.ts';
 import loginHTML from "./pages/login/login";
 import registerHTML from "./pages/register/register";
 import chatHTML from "./pages/chat/chat";
