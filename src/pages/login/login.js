@@ -1,6 +1,6 @@
-import Auth from "./../../components/Auth";
+import Auth from "../../components/Auth";
 
-const loginHTML = Auth({
+const loginHTML = new Auth({
   title: 'Вход',
   inputs:
   [

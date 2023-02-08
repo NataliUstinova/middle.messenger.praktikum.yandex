@@ -15,7 +15,7 @@ export interface IChats {
   count?: number;
 }
 
-export interface ImockUser {
+export interface ImockUser { 
   first_name: string;
   second_name: string;
   login: string;

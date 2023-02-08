@@ -1,6 +1,6 @@
-import Auth from "./../../components/Auth";
+import Auth from "../../components/Auth";
 
-const registerHTML = Auth({
+const registerHTML = new Auth({
   title: 'Регистрация',
   inputs:
     [

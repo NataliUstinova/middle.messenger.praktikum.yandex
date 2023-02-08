@@ -12,7 +12,9 @@
         {{/each}}
       </div>
       <div class="auth-form__buttons">
-      {{> button buttonId=buttonId buttonValue=buttonValue }}
+        {{#with button}}
+          <Button buttonId={{buttonId}} buttonValue={{buttonValue}} />
+        {{/with}}
       <a class="auth-form__text" id="{{redirectId}}">{{text}}</a>
       </div>
     </form>
